@@ -33,3 +33,6 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# AI 助手本地工作数据（不上传）
+.workbuddy/
