@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    任务3：约束布局（ConstraintLayout）—— 计算器界面
+    顶部 Input 标签 + 土黄色显示框；4 行按键各用一条水平链（chain）等宽分布，
+    行与行之间纵向依次约束。
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mars_bg"
+    android:fitsSystemWindows="true">
+
+    <TextView
+        android:id="@+id/tvInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/calc_input_label"
+        android:textColor="#FF757575"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDisplay"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/calc_display"
+        android:gravity="end|center_vertical"
+        android:paddingEnd="12dp"
+        android:text="@string/calc_display_value"
+        android:textColor="@color/calc_btn_text"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvInput" />
+
+    <!-- 第 1 行：7 8 9 ÷ -->
+    <Button
+        android:id="@+id/btn7"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/bg_calc_btn"
+        android:text="@string/digit_7"
+        android:textColor="@color/calc_btn_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/btn8"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDisplay" />
+
+    <Button
+        android:id="@+id/btn8"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/bg_calc_btn"
+        android:text="@string/digit_8"
+        android:textColor="@color/calc_btn_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/btn9"
+        app:layout_constraintStart_toEndOf="@id/btn7"
+        app:layout_constraintTop_toTopOf="@id/btn7" />
+
+    <Button
+        android:id="@+id/btn9"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/bg_calc_btn"
+        android:text="@string/digit_9"
+        android:textColor="@color/calc_btn_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/btnDiv"
+        app:layout_constraintStart_toEndOf="@id/btn8"
+        app:layout_constraintTop_toTopOf="@id/btn7" />
+
+    <Button
+        android:id="@+id/btnDiv"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_calc_btn"
+        android:text="@string/op_div"
+        android:textColor="@color/calc_btn_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn9"
+        app:layout_constraintTop_toTopOf="@id/btn7" />
+
+    <!-- 第 2 行：4 5 6 × -->
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/bg_calc_btn"
+        android:text="@string/digit_4"
+        android:textColor="@color/calc_btn_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/btn5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn7" />
+
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/bg_calc_btn"
+        android:text="@string/digit_5"
+        android:textColor="@color/calc_btn_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/btn6"
+        app:layout_constraintStart_toEndOf="@id/btn4"
+        app:layout_constraintTop_toTopOf="@id/btn4" />
+
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/bg_calc_btn"
+        android:text="@string/digit_6"
+        android:textColor="@color/calc_btn_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/btnMul"
+        app:layout_constraintStart_toEndOf="@id/btn5"
+        app:layout_constraintTop_toTopOf="@id/btn4" />
+
+    <Button
+        android:id="@+id/btnMul"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_calc_btn"
+        android:text="@string/op_mul"
+        android:textColor="@color/calc_btn_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn6"
+        app:layout_constraintTop_toTopOf="@id/btn4" />
+
+    <!-- 第 3 行：1 2 3 + -->
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/bg_calc_btn"
+        android:text="@string/digit_1"
+        android:textColor="@color/calc_btn_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/btn2"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn4" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/bg_calc_btn"
+        android:text="@string/digit_2"
+        android:textColor="@color/calc_btn_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/btn3"
+        app:layout_constraintStart_toEndOf="@id/btn1"
+        app:layout_constraintTop_toTopOf="@id/btn1" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/bg_calc_btn"
+        android:text="@string/digit_3"
+        android:textColor="@color/calc_btn_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/btnAdd"
+        app:layout_constraintStart_toEndOf="@id/btn2"
+        app:layout_constraintTop_toTopOf="@id/btn1" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_calc_btn"
+        android:text="@string/op_add"
+        android:textColor="@color/calc_btn_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn3"
+        app:layout_constraintTop_toTopOf="@id/btn1" />
+
+    <!-- 第 4 行：. 0 = - -->
+    <Button
+        android:id="@+id/btnDot"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/bg_calc_btn"
+        android:text="@string/op_dot"
+        android:textColor="@color/calc_btn_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/btn0"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn1" />
+
+    <Button
+        android:id="@+id/btn0"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/bg_calc_btn"
+        android:text="@string/digit_0"
+        android:textColor="@color/calc_btn_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/btnEq"
+        app:layout_constraintStart_toEndOf="@id/btnDot"
+        app:layout_constraintTop_toTopOf="@id/btnDot" />
+
+    <Button
+        android:id="@+id/btnEq"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/bg_calc_btn"
+        android:text="@string/op_eq"
+        android:textColor="@color/calc_btn_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/btnSub"
+        app:layout_constraintStart_toEndOf="@id/btn0"
+        app:layout_constraintTop_toTopOf="@id/btnDot" />
+
+    <Button
+        android:id="@+id/btnSub"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_calc_btn"
+        android:text="@string/op_sub"
+        android:textColor="@color/calc_btn_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnEq"
+        app:layout_constraintTop_toTopOf="@id/btnDot" />
+</androidx.constraintlayout.widget.ConstraintLayout>

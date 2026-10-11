@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    任务2：表格布局（TableLayout）
+    复刻官方 "Hello TableLayout" 菜单示例：
+    stretchColumns="1" 让第 2 列（快捷键列）拉伸填满剩余宽度；
+    两个 View 作水平分隔线，把 Import/Export 与其他项隔开。
+-->
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/menu_bg"
+    android:fitsSystemWindows="true"
+    android:stretchColumns="1">
+
+    <TableRow>
+
+        <TextView
+            android:padding="10dp"
+            android:text="@string/menu_open"
+            android:textColor="@color/menu_text"
+            android:textSize="18sp" />
+
+        <TextView
+            android:gravity="end"
+            android:padding="10dp"
+            android:text="@string/key_ctrl_o"
+            android:textColor="@color/menu_text"
+            android:textSize="18sp" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:padding="10dp"
+            android:text="@string/menu_save"
+            android:textColor="@color/menu_text"
+            android:textSize="18sp" />
+
+        <TextView
+            android:gravity="end"
+            android:padding="10dp"
+            android:text="@string/key_ctrl_s"
+            android:textColor="@color/menu_text"
+            android:textSize="18sp" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:padding="10dp"
+            android:text="@string/menu_save_as"
+            android:textColor="@color/menu_text"
+            android:textSize="18sp" />
+
+        <TextView
+            android:gravity="end"
+            android:padding="10dp"
+            android:text="@string/key_ctrl_shift_s"
+            android:textColor="@color/menu_text"
+            android:textSize="18sp" />
+    </TableRow>
+
+    <View
+        android:layout_height="2dp"
+        android:background="@color/menu_divider" />
+
+    <TableRow>
+
+        <TextView
+            android:padding="10dp"
+            android:text="@string/menu_x"
+            android:textColor="@color/menu_text"
+            android:textSize="18sp" />
+
+        <TextView
+            android:padding="10dp"
+            android:text="@string/menu_import"
+            android:textColor="@color/menu_text"
+            android:textSize="18sp" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:padding="10dp"
+            android:text="@string/menu_x"
+            android:textColor="@color/menu_text"
+            android:textSize="18sp" />
+
+        <TextView
+            android:padding="10dp"
+            android:text="@string/menu_export"
+            android:textColor="@color/menu_text"
+            android:textSize="18sp" />
+
+        <TextView
+            android:padding="10dp"
+            android:text="@string/key_ctrl_e"
+            android:textColor="@color/menu_text"
+            android:textSize="18sp" />
+    </TableRow>
+
+    <View
+        android:layout_height="2dp"
+        android:background="@color/menu_divider" />
+
+    <TableRow>
+
+        <TextView
+            android:padding="10dp"
+            android:text="@string/menu_quit"
+            android:textColor="@color/menu_text"
+            android:textSize="18sp" />
+    </TableRow>
+</TableLayout>

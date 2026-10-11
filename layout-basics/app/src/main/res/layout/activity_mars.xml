@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    任务4：约束布局（ConstraintLayout）—— 火星航班预订页（DEPART）
+    扁平结构：两个垂直百分比辅助线把顶栏均分为三份放三个标签页；
+    DCA / MARS 绿色卡片 + 中间白色双向箭头；橙色 One Way 开关与 1 Traveller；
+    中部火箭 + 星球装饰图；底部通栏绿色 DEPART 按钮。
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mars_bg"
+    android:fitsSystemWindows="true">
+
+    <!-- 顶部三等分辅助线 -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTab1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3333" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6667" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTabBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="60dp" />
+
+    <!-- 标签页 1：Space Stations -->
+    <ImageView
+        android:id="@+id/ivTab1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="6dp"
+        android:contentDescription="@string/tab_space_stations"
+        android:src="@drawable/ic_space_station"
+        app:layout_constraintEnd_toEndOf="@id/guidelineTab1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTab1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tab_space_stations"
+        android:textColor="@color/mars_tab_text"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@id/ivTab1"
+        app:layout_constraintStart_toStartOf="@id/ivTab1"
+        app:layout_constraintTop_toBottomOf="@id/ivTab1" />
+
+    <!-- 标签页 2：Flights -->
+    <ImageView
+        android:id="@+id/ivTab2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="6dp"
+        android:contentDescription="@string/tab_flights"
+        android:src="@drawable/ic_rocket"
+        app:layout_constraintEnd_toEndOf="@id/guidelineTab2"
+        app:layout_constraintStart_toStartOf="@id/guidelineTab1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tab_flights"
+        android:textColor="@color/mars_tab_text"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@id/ivTab2"
+        app:layout_constraintStart_toStartOf="@id/ivTab2"
+        app:layout_constraintTop_toBottomOf="@id/ivTab2" />
+
+    <!-- 标签页 3：Rovers -->
+    <ImageView
+        android:id="@+id/ivTab3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="6dp"
+        android:contentDescription="@string/tab_rovers"
+        android:src="@drawable/ic_rover"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guidelineTab2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTab3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tab_rovers"
+        android:textColor="@color/mars_tab_text"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@id/ivTab3"
+        app:layout_constraintStart_toStartOf="@id/ivTab3"
+        app:layout_constraintTop_toBottomOf="@id/ivTab3" />
+
+    <!-- 标签页之间的两条竖直分隔线 -->
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/mars_divider"
+        app:layout_constraintBottom_toTopOf="@id/guidelineTabBottom"
+        app:layout_constraintStart_toStartOf="@id/guidelineTab1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/mars_divider"
+        app:layout_constraintBottom_toTopOf="@id/guidelineTabBottom"
+        app:layout_constraintStart_toStartOf="@id/guidelineTab2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 出发地卡片 DCA -->
+    <TextView
+        android:id="@+id/tvDca"
+        android:layout_width="104dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/bg_mars_green"
+        android:gravity="center"
+        android:text="@string/card_from"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTabBottom" />
+
+    <!-- 中间白色双向箭头 -->
+    <ImageView
+        android:id="@+id/ivArrows"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:contentDescription="@string/card_from"
+        android:padding="6dp"
+        android:src="@drawable/img_double_arrows"
+        app:layout_constraintBottom_toBottomOf="@id/tvDca"
+        app:layout_constraintEnd_toStartOf="@id/tvMars"
+        app:layout_constraintStart_toEndOf="@id/tvDca"
+        app:layout_constraintTop_toTopOf="@id/tvDca" />
+
+    <!-- 目的地卡片 MARS -->
+    <TextView
+        android:id="@+id/tvMars"
+        android:layout_width="104dp"
+        android:layout_height="84dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/bg_mars_green"
+        android:gravity="center"
+        android:text="@string/card_to"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvDca" />
+
+    <!-- One Way 开关（橙色条） -->
+    <TextView
+        android:id="@+id/tvOneWay"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_mars_orange"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:text="@string/switch_one_way"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDca" />
+
+    <Switch
+        android:id="@+id/swOneWay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvOneWay"
+        app:layout_constraintEnd_toEndOf="@id/tvOneWay"
+        app:layout_constraintTop_toTopOf="@id/tvOneWay" />
+
+    <!-- 1 Traveller -->
+    <TextView
+        android:id="@+id/tvTraveller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_mars_orange"
+        android:paddingStart="12dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="8dp"
+        android:text="@string/traveller_count"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvOneWay" />
+
+    <!-- 中部装饰：火箭 + 星球（水平方向整体居中） -->
+    <ImageView
+        android:id="@+id/ivRocket"
+        android:layout_width="24dp"
+        android:layout_height="50dp"
+        android:contentDescription="@string/tab_flights"
+        android:src="@drawable/ic_rocket"
+        app:layout_constraintBottom_toTopOf="@id/btnDepart"
+        app:layout_constraintEnd_toStartOf="@id/ivGalaxy"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTraveller"
+        app:layout_constraintVertical_bias="0.55" />
+
+    <ImageView
+        android:id="@+id/ivGalaxy"
+        android:layout_width="110dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@string/mars_title"
+        android:src="@drawable/img_galaxy"
+        app:layout_constraintBottom_toBottomOf="@id/ivRocket"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivRocket" />
+
+    <!-- 底部通栏 DEPART 按钮 -->
+    <Button
+        android:id="@+id/btnDepart"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:background="@drawable/bg_mars_green"
+        android:text="@string/btn_depart"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

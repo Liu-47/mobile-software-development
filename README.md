@@ -10,13 +10,14 @@
 | 实验 | 文件夹 | 主要内容 | 完成日期 |
 | :---: | :--- | :--- | :---: |
 | 一 | [`MyFirstApplication`](./MyFirstApplication) | 开发基础：创建第一个应用、Compose 入门 | 2026-10-11 |
+| 二 | [`layout-basics`](./layout-basics) | 界面布局：线性布局、表格布局、约束布局（计算器 / 火星预订页） | 2026-10-12 |
 
 ## 开发环境
 
 | 项目 | 版本 |
 | :--- | :--- |
 | Android Studio | 2026.1.3 |
-| 语言 / UI | Kotlin + Jetpack Compose (Material3) |
+| 语言 / UI | 实验一：Kotlin + Jetpack Compose (Material3)；实验二起：Java + XML (View 体系) |
 | compileSdk / targetSdk | 37 |
 | minSdk | 24 |
 | JDK | 11 (source / target) |

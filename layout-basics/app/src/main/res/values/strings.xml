@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">layout-basics</string>
+
+    <!-- 目录页 -->
+    <string name="btn_task1">任务1  线性布局 LinearLayout</string>
+    <string name="btn_task2">任务2  表格布局 TableLayout</string>
+    <string name="btn_task3">任务3  约束布局 · 计算器</string>
+    <string name="btn_task4">任务4  约束布局 · 火星预订页</string>
+
+    <!-- 任务1 -->
+    <string name="linear_title">线性布局</string>
+    <string name="cell_1_1">One,One</string>
+    <string name="cell_1_2">One,Two</string>
+    <string name="cell_1_3">One,Three</string>
+    <string name="cell_1_4">One,Four</string>
+    <string name="cell_2_1">Two,One</string>
+    <string name="cell_2_2">Two,Two</string>
+    <string name="cell_2_3">Two,Three</string>
+    <string name="cell_2_4">Two,Four</string>
+    <string name="cell_3_1">Three,One</string>
+    <string name="cell_3_2">Three,Two</string>
+    <string name="cell_3_3">Three,Three</string>
+    <string name="cell_3_4">Three,Four</string>
+    <string name="cell_4_1">Four,One</string>
+    <string name="cell_4_2">Four,Two</string>
+    <string name="cell_4_3">Four,Three</string>
+    <string name="cell_4_4">Four,Four</string>
+
+    <!-- 任务2 -->
+    <string name="table_title">Hello TableLayout</string>
+    <string name="menu_open">Open…</string>
+    <string name="menu_save">Save…</string>
+    <string name="menu_save_as">Save As…</string>
+    <string name="menu_import">Import…</string>
+    <string name="menu_export">Export…</string>
+    <string name="menu_quit">Quit</string>
+    <string name="menu_x">X</string>
+    <string name="key_ctrl_o">Ctrl-O</string>
+    <string name="key_ctrl_s">Ctrl-S</string>
+    <string name="key_ctrl_shift_s">Ctrl-Shift-S</string>
+    <string name="key_ctrl_e">Ctrl-E</string>
+
+    <!-- 任务3 -->
+    <string name="calc_title">ConstraintLayoutTest</string>
+    <string name="calc_input_label">Input</string>
+    <string name="calc_display_value">0.0</string>
+    <string name="digit_1">1</string>
+    <string name="digit_2">2</string>
+    <string name="digit_3">3</string>
+    <string name="digit_4">4</string>
+    <string name="digit_5">5</string>
+    <string name="digit_6">6</string>
+    <string name="digit_7">7</string>
+    <string name="digit_8">8</string>
+    <string name="digit_9">9</string>
+    <string name="digit_0">0</string>
+    <string name="op_div">÷</string>
+    <string name="op_mul">×</string>
+    <string name="op_add">+</string>
+    <string name="op_sub">-</string>
+    <string name="op_eq">=</string>
+    <string name="op_dot">.</string>
+
+    <!-- 任务4 -->
+    <string name="mars_title">火星航班预订</string>
+    <string name="tab_space_stations">Space Stations</string>
+    <string name="tab_flights">Flights</string>
+    <string name="tab_rovers">Rovers</string>
+    <string name="card_from">DCA</string>
+    <string name="card_to">MARS</string>
+    <string name="switch_one_way">One Way</string>
+    <string name="traveller_count">1 Traveller</string>
+    <string name="btn_depart">DEPART</string>
+</resources>

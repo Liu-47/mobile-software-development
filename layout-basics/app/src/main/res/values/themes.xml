@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 应用主主题：浅色 + 深色标题栏（colorPrimary 取青绿色，与实验 PDF 截图一致） -->
+    <!-- targetSdk 35+ 强制边到边会让内容钻到状态栏底下，这里显式退出该强制行为 -->
+    <style name="Theme.Layoutbasics" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/teal_700</item>
+        <item name="colorPrimaryDark">#FF00796B</item>
+        <item name="colorAccent">@color/teal_200</item>
+        <item name="android:statusBarColor">#FF00796B</item>
+        <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="vanillaicecream">true</item>
+    </style>
+
+    <!-- 无标题栏变体：任务1（整屏黑底格子）与任务4（自绘顶部标签栏）使用 -->
+    <style name="Theme.Layoutbasics.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>
