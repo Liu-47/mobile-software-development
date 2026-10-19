@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MobileLabs">
+
+        <!-- 主页面：实验目录，点击跳转各实验 -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 实验一：第一个 Android 应用（Hello World，Compose） -->
+        <activity
+            android:name=".HelloWorldActivity"
+            android:exported="false"
+            android:label="@string/lab1_title" />
+
+        <!-- 实验二 · 任务1：线性布局 -->
+        <activity
+            android:name=".LinearLayoutActivity"
+            android:exported="false"
+            android:label="@string/linear_title"
+            android:theme="@style/Theme.MobileLabs.NoActionBar" />
+
+        <!-- 实验二 · 任务2：表格布局 -->
+        <activity
+            android:name=".TableLayoutActivity"
+            android:exported="false"
+            android:label="@string/table_title" />
+
+        <!-- 实验二 · 任务3：约束布局 · 计算器 -->
+        <activity
+            android:name=".CalculatorActivity"
+            android:exported="false"
+            android:label="@string/calc_title" />
+
+        <!-- 实验二 · 任务4：约束布局 · 火星预订页 -->
+        <activity
+            android:name=".MarsActivity"
+            android:exported="false"
+            android:label="@string/mars_title"
+            android:theme="@style/Theme.MobileLabs.NoActionBar" />
+    </application>
+
+</manifest>

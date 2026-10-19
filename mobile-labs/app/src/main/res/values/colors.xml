@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- 实验二 · 任务1：线性布局 4x4 格子 -->
+    <color name="cell_border">#FF9E9E9E</color>
+    <color name="cell_text">#FF9E9E9E</color>
+
+    <!-- 实验二 · 任务2：表格布局菜单 -->
+    <color name="menu_bg">#FF202020</color>
+    <color name="menu_text">#FFE6E6E6</color>
+    <color name="menu_shortcut">#FFB4B4B4</color>
+    <color name="menu_divider">#FF909090</color>
+
+    <!-- 实验二 · 任务3：计算器 -->
+    <color name="calc_display">#FFC9BF8F</color>
+    <color name="calc_btn">#FFD8D8D8</color>
+    <color name="calc_btn_text">#FF212121</color>
+
+    <!-- 实验二 · 任务4：火星预订页 -->
+    <color name="mars_green">#FF2B663A</color>
+    <color name="mars_orange">#FFB86426</color>
+    <color name="mars_bg">#FFFAFAFA</color>
+    <color name="mars_tab_text">#FF6B6B6B</color>
+    <color name="mars_divider">#FFD5D5D5</color>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 应用主主题（主页面 / 实验一用，Compose；实验二 View 页面默认带标题栏） -->
+    <style name="Theme.MobileLabs" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/teal_700</item>
+        <item name="colorPrimaryDark">#FF00796B</item>
+        <item name="colorAccent">@color/teal_200</item>
+        <item name="android:statusBarColor">#FF00796B</item>
+        <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="vanillaicecream">true</item>
+    </style>
+
+    <!-- 无标题栏变体：任务1（整屏黑底格子）与任务4（自绘顶部标签栏）使用 -->
+    <style name="Theme.MobileLabs.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>
